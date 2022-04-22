@@ -11,11 +11,10 @@ pipeline {
         sh '''
         sudo docker build -t dudwns03382/testweb:newnewmain .
         sudo docker push dudwns03382/testweb:newnewmain
-	sudo sed -i 's/<h2> UPDATED MAIN PAGE </h2>/<h2> UPDATED BLOG PAGE </h2>/g' index.html
+	sudo sed -i 's/MAIN PAGE/BLOG PAGE/g' index.html
 	sudo docker build -t dudwns03382/testweb:newnewblog .
 	sudo docker push dudwns03382/testweb:newnewblog
-	sudo sed -i 's/<h2> UPDATED BLOG PAGE </h2>/<h2> UPDATED SHOP PAGE </h2>
-/g' index.html
+	sudo sed -i 's/BLOG PAGE/SHOP PAGE/g' index.html
 	sudo docker build -t dudwns03382/testweb:newnewshop .
 	sudo docker push dudwns03382/testweb:newnewshop
         '''
